@@ -1,11 +1,9 @@
 package services;
 
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class KilometrajeVehiculoTest {
     @Test
@@ -23,5 +21,4 @@ class KilometrajeVehiculoTest {
         assertArrayEquals(resultadoKilometrajeVehiculos.toArray(),kilometrajes.toArray());
         assertEquals(resultadoKilometrajeVehiculos,kilometrajes);
     }
-
 }

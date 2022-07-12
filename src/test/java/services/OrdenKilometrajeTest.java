@@ -1,5 +1,6 @@
 package services;
 
+import static org.junit.jupiter.api.Assertions.*;
 import model.Vehiculo;
 import model.enums.MarcaVehiculo;
 import org.junit.jupiter.api.Test;
@@ -7,15 +8,21 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class OrdenKilometrajeTest {
     @Test
     void ordenarkilometraje(){
         //Configuración (definición de variables)
         OrdenKilometraje ordenaKilometraje = new OrdenKilometraje();
 
-        //Esperado
+        //Actuar (datos de retorno)
+        List<Vehiculo> kilometrajeOrdenado = ordenaKilometraje.ordenarKilometraje();
+
+        //Verificación (lo que retorna es igual a los que se espera
+        assertArrayEquals(resultadoOrdenaKilometraje().toArray(),kilometrajeOrdenado.toArray());
+        assertEquals(resultadoOrdenaKilometraje(),kilometrajeOrdenado);
+    }
+
+    List<Vehiculo> resultadoOrdenaKilometraje(){
         List<Vehiculo> resultadoOrdenaKilometraje = Arrays.asList(
                 (new Vehiculo("7777GGG", MarcaVehiculo.CITROEN, 0)),
                 (new Vehiculo("1111AAA", MarcaVehiculo.BMW, 10000)),
@@ -25,11 +32,6 @@ class OrdenKilometrajeTest {
                 (new Vehiculo("5555EEE", MarcaVehiculo.AUDI, 200000)),
                 (new Vehiculo("6666FFF", MarcaVehiculo.OPEL, 300000)));
 
-        //Actuar (datos de retorno)
-        List<Vehiculo> kilometrajeOrdenado = ordenaKilometraje.ordenarKilometraje();
-
-        //Verificación (lo que retorna es igual a los que se espera
-        assertArrayEquals(resultadoOrdenaKilometraje.toArray(),kilometrajeOrdenado.toArray());
-        assertEquals(resultadoOrdenaKilometraje,kilometrajeOrdenado);
+        return resultadoOrdenaKilometraje;
     }
 }

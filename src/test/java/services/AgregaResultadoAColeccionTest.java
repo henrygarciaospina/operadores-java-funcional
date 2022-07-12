@@ -1,13 +1,12 @@
 package services;
 
+import static org.junit.jupiter.api.Assertions.*;
 import model.Vehiculo;
 import model.enums.MarcaVehiculo;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class AgregaResultadoAColeccionTest {
     @Test
@@ -28,7 +27,5 @@ class AgregaResultadoAColeccionTest {
         //Verificación (lo que retorna es igual a los que se espera
         assertArrayEquals(resultadoAgregadoAColeccion.toArray(),ResultadoAColeccion.toArray());
         assertEquals(resultadoAgregadoAColeccion,ResultadoAColeccion );
-
     }
-
 }
